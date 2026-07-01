@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Password Strength Checker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="card">
+  <h1>Password Strength Checker</h1>
+  <p class="subtitle">Type a password to see how strong it is.</p>
+
+  <div class="input-group">
+    <input type="password" id="password" placeholder="Enter a password" />
+    <button id="togglePassword">Show</button>
+  </div>
+
+  <div class="meter">
+    <div id="strengthBar"></div>
+  </div>
+  <h2 id="strengthText">Strength: —</h2>
+
+  <div class="stats">
+    <p><strong>Entropy:</strong> <span id="entropy">0</span> bits</p>
+    <p><strong>Online attack estimate</strong> (assuming no lockout): <span id="onlineTime">—</span></p>
+    <p><strong>Offline attack estimate:</strong> <span id="offlineTime">—</span></p>
+  </div>
+  <p class="note">
+    Estimates assume an attacker searches half the possible combinations
+    on average. Real-world cracking speed depends on hardware and how
+    the password is stored (hashing algorithm, salting, etc.).
+  </p>
+
+  <ul class="checklist">
+    <li id="lengthCheck">✖ At least 8 characters</li>
+    <li id="upperCheck">✖ Uppercase letter</li>
+    <li id="lowerCheck">✖ Lowercase letter</li>
+    <li id="numberCheck">✖ Number</li>
+    <li id="symbolCheck">✖ Special character</li>
+  </ul>
+
+  <button id="generateBtn">Generate Random Password</button>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
